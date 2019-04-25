@@ -1,4 +1,5 @@
 import React from 'react';
+import './FriendList.css';
 
 class FriendList extends React.Component {
     constructor(props){
@@ -9,13 +10,13 @@ class FriendList extends React.Component {
             name: this.props.friend.name,
             age: this.props.friend.age,
             email: this.props.friend.email
-
         }
     }
 
     render(){
         return(
-            <div className='friend-container'>
+            <div className='friend-list'>
+
                 <div className='name'>
                     <strong>Name:</strong> {this.state.name}
                 </div>
