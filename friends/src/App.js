@@ -1,9 +1,10 @@
 import React from 'react';
 import './App.css';
+
+import {Route, NavLink} from 'react-router-dom';
 import axios from 'axios';
 
 import FriendContainer from './components/friends/FriendContainer';
-import Navigation from './components/Navigation/Navigation';
 
 class App extends React.Component {
   constructor(props){
@@ -31,8 +32,14 @@ class App extends React.Component {
   render(){
   return (
     <div className="App">
-      <Navigation />
-      <FriendContainer friends={this.state.friends} />
+      <div className='nav-links'>
+        <NavLink exact to='/' >Friend List</NavLink>
+        <NavLink exact to='/new-friend' >Add New Friend</NavLink>
+      </div>
+        <Route exact path='/' render={ props => (
+          <FriendContainer 
+            {...props}
+            friends={this.state.friends} />)} />
     </div>
   );
 }
