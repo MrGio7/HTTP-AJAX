@@ -5,13 +5,19 @@ import {Route, NavLink} from 'react-router-dom';
 import axios from 'axios';
 
 import FriendContainer from './components/friends/FriendContainer';
+import NewFriendForm from './components/friends/NewFriendForm';
 
 class App extends React.Component {
   constructor(props){
     super(props);
 
     this.state = {
-      friends: []
+      friends: [],
+      friend: {
+        name:'',
+        age: null,
+        email:''
+      }
     }
   }
 
@@ -39,7 +45,15 @@ class App extends React.Component {
         <Route exact path='/' render={ props => (
           <FriendContainer 
             {...props}
-            friends={this.state.friends} />)} />
+            friends={this.state.friends} />)} 
+        />
+
+        <Route exact path='/new-friend' render={props =>(
+            <NewFriendForm
+              {...props}
+            />
+          )}
+        />
     </div>
   );
 }
