@@ -1,0 +1,14 @@
+.nav-links{
+  display: flex;
+  width: 90%;
+  justify-content: space-between;
+  margin:15px auto;
+  
+}
+
+.nav-links a{
+  text-decoration: none;
+  color: #1c5d76;
+  font-weight: bold;
+  font-size: 1.4rem;
+}

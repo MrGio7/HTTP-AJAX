@@ -1,0 +1,25 @@
+.friend-container{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+}
+
+.friend-container div{
+    margin:3px 0;
+}
+
+.friend-container .friend-list{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 280px;
+    margin:10px auto;
+    padding: 10px;
+
+    border: 2px solid black;
+    border-radius: 10px;
+}
