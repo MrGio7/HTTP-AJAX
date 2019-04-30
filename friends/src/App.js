@@ -3,6 +3,7 @@ import './App.css';
 import axios from 'axios';
 
 import FriendContainer from './components/friends/FriendContainer';
+import Navigation from './components/Navigation/Navigation';
 
 class App extends React.Component {
   constructor(props){
@@ -30,6 +31,7 @@ class App extends React.Component {
   render(){
   return (
     <div className="App">
+      <Navigation />
       <FriendContainer friends={this.state.friends} />
     </div>
   );
