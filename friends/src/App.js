@@ -21,6 +21,24 @@ class App extends React.Component {
     }
   }
 
+  changeHandler = ev => {
+    this.setState({
+      friend:{
+        ...this.state.friend,
+        [ev.target.name]: ev.target.value
+      }
+    })
+  }
+
+  addNewItem = () => {
+    axios
+    .post('http://localhost:5000/friends', this.state.friend)
+    .then(res =>{
+      this.setState({friends: res.data})
+    })
+    .catch(err => console.log(err))
+  }
+
   componentDidMount() {
     axios.get('http://localhost:5000/friends')
       .then( res => {
@@ -51,6 +69,9 @@ class App extends React.Component {
         <Route exact path='/new-friend' render={props =>(
             <NewFriendForm
               {...props}
+              changeHandler={this.changeHandler}
+              friend={this.state.friend}
+              addNewItem={this.addNewItem}
             />
           )}
         />
