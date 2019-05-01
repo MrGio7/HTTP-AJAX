@@ -17,8 +17,12 @@ class FriendList extends React.Component {
         return(
             <div className='friend-list'>
 
+                <div className='remove-btn'>
+                    <h4>X</h4>
+                </div>
+
                 <div className='name'>
-                    <strong>Name:</strong> {this.state.name}
+                    <strong>Name:</strong> {this.state.name} 
                 </div>
                 
                 <div className='age'>
