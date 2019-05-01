@@ -13,21 +13,27 @@ const NewFriendForm = props => {
                     type='text'
                     name='name'
                     placeholder='name'
+                    onChange={props.changeHandler}
+                    value={props.friend.name}
                 />
-
+                
                 <input
                     type='number'
                     name='age'
                     placeholder='age'
+                    onChange={props.changeHandler}
+                    value={props.friend.age}
                 />
 
                 <input
                     type='text'
                     name='email'
                     placeholder='email'
+                    onChange={props.changeHandler}
+                    value={props.friend.email}
                 />
 
-                <button className='btn' >ADD FRIEND</button>
+                <button onClick={props.addNewItem} className='btn' >ADD FRIEND</button>
 
             </form>
 

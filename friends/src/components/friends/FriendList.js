@@ -17,8 +17,17 @@ class FriendList extends React.Component {
         return(
             <div className='friend-list'>
 
+                <button 
+                    className='remove-btn' 
+                    onClick={ev => {
+                        this.props.deleteFriend(ev, this.props.friend.id);
+                    }}
+                >
+                    X
+                </button>
+
                 <div className='name'>
-                    <strong>Name:</strong> {this.state.name}
+                    <strong>Name:</strong> {this.state.name} 
                 </div>
                 
                 <div className='age'>
