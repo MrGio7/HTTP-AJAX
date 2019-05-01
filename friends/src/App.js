@@ -15,7 +15,7 @@ class App extends React.Component {
       friends: [],
       friend: {
         name:'',
-        age: null,
+        age: undefined,
         email:''
       }
     }
@@ -37,6 +37,18 @@ class App extends React.Component {
       this.setState({friends: res.data})
     })
     .catch(err => console.log(err))
+  }
+
+  deleteFriend = (ev, id) => {
+    ev.preventDefault();
+    axios
+    .delete(`http://localhost:5000/friends/${id}`)
+    .then(res => {
+      this.setState({friends: res.data})
+    })
+    .catch( err => {
+      console.log(err)
+    })
   }
 
   componentDidMount() {
@@ -63,7 +75,10 @@ class App extends React.Component {
         <Route exact path='/' render={ props => (
           <FriendContainer 
             {...props}
-            friends={this.state.friends} />)} 
+            friends={this.state.friends} 
+            deleteFriend={this.deleteFriend}
+          />
+          )} 
         />
 
         <Route exact path='/new-friend' render={props =>(

@@ -5,7 +5,7 @@ import FriendList from './FriendList';
 const FriendContainer = props =>{
     return(
         <div className='friend-container'>
-            {props.friends.map( friend => <FriendList key={friend.id} friend={friend} />)}
+            {props.friends.map( friend => <FriendList key={friend.id} friend={friend} deleteFriend={props.deleteFriend} />)}
         </div>
     )
 }
